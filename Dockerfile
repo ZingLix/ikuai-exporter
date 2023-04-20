@@ -9,7 +9,7 @@ ENV CGO_ENABLED=0
 RUN flags="-X main.buildTime=`date -u '+%Y-%m-%d_%I:%M:%S%p'` -X main.version=`git describe --long --dirty --abbrev=6 --tags`" &&\
     go build -ldflags "$flags" -v -o /go/src/bin/exporter main.go
 
-FROM ccr.ccs.tencentyun.com/imoe-tech/base-image:alpine-3.14.0-tz
+FROM alpine:3
 LABEL maintainers="Jakes Lee"
 LABEL description="iKuai exporter"
 
