@@ -129,7 +129,7 @@ func (i *IKuaiExporter) Collect(metrics chan<- prometheus.Metric) {
 		sysStat.Verinfo.Arch,
 		sysStat.Verinfo.Verstring)
 
-	metrics <- prometheus.MustNewConstMetric(i.cpuTempDesc, prometheus.GaugeValue, float64(sysStat.Cputemp[0]))
+	// metrics <- prometheus.MustNewConstMetric(i.cpuTempDesc, prometheus.GaugeValue, float64(sysStat.Cputemp[0]))
 
 	for idx, item := range sysStat.Cpu {
 		s := item[:len(item)-1]
